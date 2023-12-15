@@ -7,3 +7,6 @@ pnpm-lock.yaml
 yarn.lock
 
 examples/assets/
+
+/build
+/.idea
