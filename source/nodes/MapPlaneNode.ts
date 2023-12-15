@@ -1,4 +1,4 @@
-import {BufferGeometry, Intersection, MeshBasicMaterial, Raycaster, Vector3} from 'three';
+import {BufferGeometry, Intersection, MeshBasicMaterial, MeshStandardMaterial, Raycaster, Vector3} from 'three';
 import {MapNode, QuadTreePosition} from './MapNode';
 import {MapNodeGeometry} from '../geometries/MapNodeGeometry';
 import {UnitsUtils} from '../utils/UnitsUtils';
@@ -9,7 +9,7 @@ export class MapPlaneNode extends MapNode
 {
 	public constructor(parentNode = null, mapView = null, location = QuadTreePosition.root, level = 0, x = 0, y = 0) 
 	{
-		super(parentNode, mapView, location, level, x, y, MapPlaneNode.geometry, new MeshBasicMaterial({wireframe: false}));
+		super(parentNode, mapView, location, level, x, y, MapPlaneNode.geometry, new MeshStandardMaterial({wireframe: false}));
 
 		this.matrixAutoUpdate = false;
 		this.isMesh = true;

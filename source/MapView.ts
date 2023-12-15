@@ -1,4 +1,4 @@
-import {BufferGeometry, Camera, Group, Material, Mesh, MeshBasicMaterial, Object3D, Raycaster, Scene, WebGLRenderer} from 'three';
+import {BufferGeometry, Camera, Group, Material, Mesh, MeshBasicMaterial, MeshStandardMaterial, Object3D, Raycaster, Scene, WebGLRenderer} from 'three';
 import {OpenStreetMapsProvider} from './providers/OpenStreetMapsProvider';
 import {MapNode} from './nodes/MapNode';
 import {MapHeightNode} from './nodes/MapHeightNode';
@@ -97,7 +97,7 @@ export class MapView extends Mesh
 	 */
 	public constructor(root: (number | MapNode) = MapView.PLANAR, provider: MapProvider = new OpenStreetMapsProvider(), heightProvider: MapProvider = null) 
 	{
-		super(undefined, new MeshBasicMaterial({transparent: true, opacity: 0.0, depthWrite: false, colorWrite: false}));
+		super(undefined, new MeshStandardMaterial({transparent: true, opacity: 0.0, depthWrite: false, colorWrite: false}));
 
 		this.lod = new LODRaycast();
 
